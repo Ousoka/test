@@ -5,6 +5,20 @@ cmd 14_06_2023 lubuntu firewall config
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses: [172.16.0.254/16]
+    enp0s8:
+      dhcp4: no
+      addresses: [169.10.0.254/16]
+    enp0s9:
+      dhcp4: yes
+
+
 ousoka@Lubuntu1:~$ sudo -i
 [sudo] password for ousoka: 
 root@Lubuntu1:~# cd /etc/netplan
